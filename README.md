@@ -13,7 +13,7 @@
 ## To run the app
 1. Run the server locally if you haven't done so already.
    `postgres -D /usr/local/var/postgres`
-2. Run the Rails app
+1. cd to the Advendetour folder, and run the Rails app.
    `rails server`
 3. Go to http://localhost:3000/
 
