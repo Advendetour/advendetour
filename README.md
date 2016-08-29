@@ -11,7 +11,7 @@
    `rake db:create`
 
 ## To run the app
-1. Run the server locally if you haven`t done so already.
+1. Run the server locally if you haven't done so already.
    `postgres -D /usr/local/var/postgres`
 2. Run the Rails app
    `rails server`
@@ -23,4 +23,4 @@
 3. On the bottom left console, click the underlined `Discover and setup`
 4. Click the yellow triangle at the bottom prompting you to install a new driver.
 5. Choose Advendetour_development. Click `Ok`.
-6. View the database(s) by clicking the vertical "Database" tab on the top right.
+6. View the database(s) by clicking the vertical `Database` tab on the top right.
