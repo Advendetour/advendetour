@@ -1,24 +1,18 @@
-# README
+# Advendetour Ruby on Rails App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## First Time Installation
+1. Install Homebrew (Mac).
+   `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+2. Use homebrew to install the Ruby Gem for postgresql
+   `brew install postgresql'
+3. Run the server locally.
+   `postgres -D /usr/local/var/postgres`
+4. Initialize the database locally.
+   `rake db:create`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To run the app
+1. Run the server locally if you haven't done so already.
+   `postgres -D /usr/local/var/postgres`
+2. Run the Rails app
+   `rails server'
+3. Go to http://localhost:3000/
