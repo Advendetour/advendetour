@@ -1,0 +1,35 @@
+<head>
+
+	<%= javascript_include_tag('index.js') %>
+	<%= javascript_include_tag('jquery-1.12.4.min.js') %>
+
+</head>
+
+
+<h1>Welcome to Advendetour!</h1>
+<center><p><h3>Where the journey begins...</h3></p></center>
+<div id="toplevel">
+	Departure Country
+	<input type="text" name="dep_country" id="dep_country">
+	Departure City
+	<input type="text" name="dep_city" id="dep_city">
+	<br></br>
+	Destination Country (optional)
+	<input type="text" name="dest_country" id="dest_country">
+	Destination City (optional)
+	<input type="text" name="dest_city" id="dest_city">
+<!--	<br>How far would you like to travel per day?
+	<input type="text" name="distance_per_day" id="distance_per_day"> Km -->
+	<br><br>
+	<%= link_to "Click for second", "second", :data => {:dep_city => "Manila"} %>
+	<input type="button" value="Start your journey" onlick="start_search('dep_country','dep_city')" />
+	<!-- <button type="button" id="end_search">Finalize your journey</button> -->
+<!--
+</div>
+<br><br><br>
+<div id="map"></div>
+<div id="directions_panel"></div>
+<br><br>
+<div id="cities">
+</div>
+-->
