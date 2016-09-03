@@ -4,7 +4,7 @@ $(window).load(function() {
 
 var map;
 
-function initialize() {
+function initMap() {
 
     var mapOptions = {
         center: new google.maps.LatLng(45.503782, -73.576487),
@@ -106,10 +106,10 @@ function loadScript() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     //'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o&sensor=false&libraries=drawing'
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+    script.src = 'https://maps.googleapis.com/maps/api/js?' +
         //'&v=3.14'+
-        //'&key=AIzaSyBJYFdplGeKUUEmGZ-vL4ydiSZ09Khsa_o'+
+        'key=AIzaSyCDtWXoGK-KnvUa-Ad0vqWMwV5F8e_yC3M'+
         '&libraries=drawing'+
-        '&callback=initialize';
+        '&callback=initMap';
     document.body.appendChild(script);
 }
