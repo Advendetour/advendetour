@@ -6,8 +6,8 @@
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5LyIEhdrka55mYbw5pIHSwDyA-FR82gw&callback=initMap"></script>
 </head>
 <body>
-<%= :dep_city %>
-<%= @str %>
+<%= @city %>
+<%= "yo" %>
 </body>
 <script>
 var startCountry;
@@ -27,7 +27,7 @@ function start_search()
   //alert(startCountry);
   startCity = $("#dep_city").val();
   start = coord(startCity,startCountry);
-  
+
   endCountry = $("#dest_city").val();
   endCity = $("#dest_city").val();
   end = coord(endCity,endCountry);

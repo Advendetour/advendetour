@@ -20,15 +20,18 @@
 <h1>Welcome to Advendetour!</h1>
 
 <div id="toplevel">
+	Departure Country
+	<input type="text" name="dep_country" id="dep_country">
 	Departure City
 	<input type="text" name="dep_city" id="dep_city">
-	Destination City
+	<br></br>
+	Destination Country (optional)
+	<input type="text" name="dest_country" id="dest_country">
+	Destination City (optional)
 	<input type="text" name="dest_city" id="dest_city">
-	<br>How far would you like to travel per day?
-	<input type="text" name="distance_per_day" id="distance_per_day"> Km
 	<br><br>
 	<button type="button" id="start_search">Start your journey</button>
-	<button type="button" id="end_search">Finalize your journey</button>
+
 </div>
 <br><br><br>
 <div id="map"></div>
@@ -51,9 +54,16 @@
 
 		$("#start_search").click(function(){
 			//debugger;
-			startName = $("#dep_city").val()
-			start = coord(startName);
-			end = coord($("#dest_city").val());
+			//alert("i am in start search");
+			
+			startCountry = $("#dep_country").val();
+			//alert(startCountry);
+			startCity = $("#dep_city").val();
+			start = coord(startCity,startCountry);
+
+			endCountry = $("#dest_city").val();
+			endCity = $("#dest_city").val();
+			end = coord(endCity,endCountry);
 			origin= new google.maps.LatLng(start[0],start[1]);
 			dest = new google.maps.LatLng(end[0],end[1]);
 			calculateAndDisplayRoute(directionsService,directionsDisplay);
@@ -64,7 +74,10 @@
 		});
 
 	}
-
+	var startCountry;
+	var startCity;
+	var endCountry;
+	var endCity;
 	var start ;
 	var end ;
 	var origin;

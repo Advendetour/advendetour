@@ -17,7 +17,7 @@ $(document).ready(function(){
 		distancePerDay = $("#distance_per_day").val();
 
 		// add starting city first
-		var ret = '<div class="city" data-set="true" data-name='+depcity+'>'+depcity+", "+stateCountry(depcity)[0]+", "+stateCountry(depcity)[1]+'<div class="activities"></div></div>';
+		var ret = '<div class="city" data-set="true" data-name='+dep_city+'>'+dep_city+", "+stateCountry(depcity)[0]+", "+stateCountry(depcity)[1]+'<div class="activities"></div></div>';
 		$("#cities").append(ret);
 
 		// find and display mid cities
@@ -71,13 +71,13 @@ $(document).on('click', '.city', function(){
 		}
 		activities.slideDown("slow");
 	} else {
-		if(activities.css('display') == 'none'){ 
-			activities.show('slow'); 
-		} else { 
-			activities.hide('slow'); 
+		if(activities.css('display') == 'none'){
+			activities.show('slow');
+		} else {
+			activities.hide('slow');
 		}
 	}
-	
+
 	/*if (activities.display)
 	activities.slideToggle();*/
 
@@ -98,9 +98,10 @@ $(document).on('click', '.add_city', function(){
 	//console.log(output);
 });
 
-function coord(cityName){
-	city = encodeURIComponent(cityName);
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyAwe6XMoayWw_yOH48YW4zBNf2XGnyZYeo";
+function coord(cityName,countryName){
+	var city = encodeURIComponent(cityName);
+	var country = encodeURIComponent(countryName);
+    var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+",+"+country+"&key=AIzaSyAwe6XMoayWw_yOH48YW4zBNf2XGnyZYeo";
     var ret;
     jQuery.getJSON({
         url: url,
@@ -230,7 +231,7 @@ function getCitiesInBetween(startCity, endCity){
 				//console.log(name);
 				var lat = data[i]["position"]["coordinates"][1];
 				var lon = data[i]["position"]["coordinates"][0];
-				var dis = calcCrow(lat,lon,breakPoint[0],breakPoint[1])
+				var dis = calcCrow(lat,lon,breakPoint[0],breakPoint[1]);
 				cityModel= {"name": name, "lat": lat, "lon": lon, "dis": dis};
 				model_arr[i]=cityModel;
 			}
